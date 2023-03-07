@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/ucs-exercise-liliane" mode="merge" />
+    <filter root="/content/ucs-exercise-liliane" mode="merge" />
+    <filter root="/content/dam/ucs-exercise-liliane" mode="merge">
+        <exclude pattern="/content/dam/ucs-exercise-liliane(/.*)?" />
+        <include pattern="/content/dam/ucs-exercise-liliane/jcr:content(/.*)?" />
+    </filter>
+    <filter root="/content/dam/ucs-exercise-liliane/asset.jpg" mode="merge" />
+    <filter root="/content/experience-fragments/ucs-exercise-liliane" mode="merge" />
+</workspaceFilter>

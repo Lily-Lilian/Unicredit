@@ -1,0 +1,29 @@
+<html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>UniCredit</title>
+      <sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+      />
+      <sly
+        data-sly-call="${clientlib.css @ categories=['ucs-exercise-liliane.basic'], async=true}"
+      />
+    </head>
+    <body>
+      <sly
+        data-sly-resource="${'header' @resourceType='ucs-exercise-liliane/components/header'}"
+      ></sly>
+      <sly
+        data-sly-resource="${'footer' @resourceType='ucs-exercise-liliane/components/footer'}"
+      ></sly>
+
+      <sly data-sly-include="/libs/wcm/core/components/init/init.jsp" />
+      <sly
+        data-sly-call="${clientlib.js @ categories=['ucs-exercise-liliane.basic'], async=true}"
+      />
+    </body>
+  </html>
+</html>

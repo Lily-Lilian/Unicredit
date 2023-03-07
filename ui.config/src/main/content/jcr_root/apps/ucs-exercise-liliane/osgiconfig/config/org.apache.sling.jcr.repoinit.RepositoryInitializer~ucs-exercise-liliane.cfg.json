@@ -1,0 +1,7 @@
+{
+  "scripts": [
+    "create path (sling:OrderedFolder) /content/dam/ucs-exercise-liliane",
+    "create path (nt:unstructured) /content/dam/ucs-exercise-liliane/jcr:content",
+    "set properties on /content/dam/ucs-exercise-liliane/jcr:content\n  set cq:conf{String} to /conf/ucs-exercise-liliane\n  set jcr:title{String} to \"Academy-Liliane Site\"\nend"
+  ]
+}
