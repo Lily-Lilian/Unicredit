@@ -9,20 +9,22 @@
         data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
       />
       <sly
-        data-sly-call="${clientlib.css @ categories=['ucs-exercise-liliane.basic'], async=true}"
+        data-sly-call="${clientlib.css @ categories=['ucs-exercise-liliane.base']}"
       />
     </head>
     <body>
       <sly
         data-sly-resource="${'header' @resourceType='ucs-exercise-liliane/components/header'}"
-      ></sly>
-      <sly
-        data-sly-resource="${'footer' @resourceType='ucs-exercise-liliane/components/footer'}"
-      ></sly>
-
+      />
       <sly data-sly-include="/libs/wcm/core/components/init/init.jsp" />
       <sly
-        data-sly-call="${clientlib.js @ categories=['ucs-exercise-liliane.basic'], async=true}"
+        data-sly-resource="${'parsys' @ resourceType='wcm/foundation/components/parsys'}"
+      />
+      <sly
+        data-sly-resource="${'footer' @resourceType='ucs-exercise-liliane/components/footer'}"
+      />
+      <sly
+        data-sly-call="${clientlib.js @ categories=['ucs-exercise-liliane.base']}"
       />
     </body>
   </html>
