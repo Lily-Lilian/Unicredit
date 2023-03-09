@@ -56,6 +56,31 @@
                                             value="icon icon-calendar" />
                                     </items>
                                 </icons>
+                                <linkURL
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldDescription="Make the image a link to another resource."
+                                    fieldLabel="Link"
+                                    nodeTypes="dam:Asset, nt:file, nt:folder, cq:Page,  sling:Folder, sling:OrderedFolder"
+                                    name="./linkURL"
+                                    required="{Boolean}true"
+                                    rootPath="/content/ucs-exercise-liliane" />
+                                <linktarget
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="target"
+                                    name="./target">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <option1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="current tab"
+                                            value="_self" />
+                                        <option2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="new tab"
+                                            value="_blank" />
+                                    </items>
+                                </linktarget>
                             </items>
                         </field>
                     </navLink>

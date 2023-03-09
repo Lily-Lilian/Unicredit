@@ -2,21 +2,23 @@
 <header class="header ucg-icons__newPackage">
   <nav class="navbar container-fixed">
     <div class="navbar__zero-level">
-      <a class="navbar__logo" href="#">
-        <img
-          src="https://www.unicreditgroup.eu/etc/designs/unicreditgroupn/img/static/logoHiRes.png"
-          alt="unicredit-logo"
-        />
-      </a>
       <!-- <div > -->
       <div
-        class="navbar__links"
-        data-sly-resource="${'nav' @ resourceType='ucs-exercise-liliane/components/nav'}"
+        class="navbar__logo"
+        data-sly-resource="${'logo' @ resourceType='ucs-exercise-liliane/components/logo'}"
       ></div>
-      <a class="navbar__entry-point" href="#">
-        <div class="icon icon-online-Banking_A"></div>
-        <div class="entry-point__text text--label">ONLINE BANKING</div>
-      </a>
+      <div>
+        <sly
+          data-sly-resource="${'nav' @ resourceType='ucs-exercise-liliane/components/nav'}"
+        ></sly>
+      </div>
+      <div>
+        <sly
+          data-sly-resource="${'navicon' @
+          resourceType='ucs-exercise-liliane/components/navicon'}"
+        >
+        </sly>
+      </div>
     </div>
 
     <div
@@ -29,15 +31,17 @@
           <span>BACK</span>
         </div>
         <div class="first-level__items">
-          <div
-            data-nav-1="${item.name}"
-            class="first-level__item ${item.name}"
-            href="${item.path}.html"
-            data-sly-repeat="${model.firstLevelItems.listChildren}"
-          >
-            <span class="item__text text--label">${item.title}</span>
-            <span class="icon icon-forth"></span>
-          </div>
+          <sly data-sly-repeat="${model.firstLevelItems.listChildren}">
+            <div
+              data-nav-1="${item.name}"
+              class="first-level__item ${item.name}"
+              href="${item.path}.html"
+              data-sly-test="${!item.hideInNav}"
+            >
+              <span class="item__text text--label">${item.title}</span>
+              <span class="icon icon-forth"></span>
+            </div>
+          </sly>
         </div>
         <div class="navbar__languages">
           <div class="languages__selector">
@@ -84,11 +88,13 @@
               >
                 ${item.title}
               </a>
-              <a
-                class="second-level__item text--body"
-                data-sly-repeat="${item.listChildren}"
-                href="${item.path}.html"
-                >${item.title}</a
+              <sly data-sly-repeat="${item.listChildren}">
+                <a
+                  class="second-level__item text--body"
+                  data-sly-test="${!item.hideInNav}"
+                  href="${item.path}.html"
+                  >${item.title}</a
+                ></sly
               >
             </div>
           </div>

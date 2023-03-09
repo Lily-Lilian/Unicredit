@@ -23,10 +23,6 @@ public class Header {
     }
 
     public Page getFirstLevelItems() {
-        return currentPage.getAbsoluteParent(3);
-    }
-
-    public Page getSecondLevelItems() {
         return currentPage.getAbsoluteParent(2);
     }
 }

@@ -1,0 +1,13 @@
+<!--HTL and HTML-->
+<sly data-sly-list.footernavitem="${resource.getChildren}">
+  <sly data-sly-test="${footernavitem.name == 'content'}">
+    <sly data-sly-list.text="${footernavitem.getChildren}">
+      <a
+        href="${text.linkURL}.html"
+        target="${text.optional}"
+        class="footer__link"
+        >${text.heading}</a
+      >
+    </sly>
+  </sly>
+</sly>

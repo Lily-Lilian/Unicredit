@@ -1,11 +1,17 @@
-<!--HTL and HTML-->
-<sly data-sly-list.iconCmp="${resource.getChildren}">
-  <sly data-sly-test="${iconCmp.name == 'text'}">
-    <sly data-sly-list.text="${iconCmp.getChildren}">
-      <a class="navbar__link contact-us" href="#">
-        <div class="${text.icon}"></div>
-        <p class="text--label">${text.title}</p>
-      </a>
+<div class="navbar__links">
+  <!--HTL and HTML-->
+  <sly data-sly-list.iconCmp="${resource.getChildren}">
+    <sly data-sly-test="${iconCmp.name == 'text'}">
+      <sly data-sly-list.text="${iconCmp.getChildren}">
+        <a
+          class="navbar__link contact-us"
+          target="${text.target}"
+          href="${text.linkURL}.html"
+        >
+          <div class="${text.icon}"></div>
+          <p class="text--label">${text.title}</p>
+        </a>
+      </sly>
     </sly>
   </sly>
-</sly>
+</div>

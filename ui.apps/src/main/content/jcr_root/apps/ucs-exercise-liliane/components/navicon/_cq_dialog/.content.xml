@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <name
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="text"
+                        fieldDescription="Enter the text"
+                        emptyText="title"
+                        name="./title"
+                        required="{Boolean}true" />
+
+                    <icons
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="icon"
+                        name="./icon">
+                        <items jcr:primaryType="nt:unstructured">
+                            <banking
+                                jcr:primaryType="nt:unstructured"
+                                text="ONLINE BANKING"
+                                value="icon icon-online-Banking_A" />
+
+                        </items>
+                    </icons>
+                    <linkURL
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Make the image a link to another resource."
+                        fieldLabel="Link"
+                        nodeTypes="dam:Asset, nt:file, nt:folder, cq:Page,  sling:Folder, sling:OrderedFolder"
+                        name="./linkURL"
+                        required="{Boolean}true"
+                        rootPath="/content/ucs-exercise-liliane" />
+                    <linktarget
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="target"
+                        name="./target">
+                        <items jcr:primaryType="nt:unstructured">
+                            <option1
+                                jcr:primaryType="nt:unstructured"
+                                text="current tab"
+                                value="_self" />
+                            <option2
+                                jcr:primaryType="nt:unstructured"
+                                text="new tab"
+                                value="_blank" />
+                        </items>
+                    </linktarget>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

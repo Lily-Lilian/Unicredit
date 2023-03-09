@@ -1,53 +1,39 @@
-<!-- ******************* START FOOTER COMPONENT ******************* -->
 <footer class="footer ucg-icons__newPackage">
-  <div class="footer__wrap container">
+  <div class="container">
     <div class="footer__upper">
       <div class="footer__mainLink">
-        <a href="#" class="footer__link">Contacts</a>
-        <a href="#" class="footer__link">Glossary</a>
-        <a href="#" class="footer__link">System Requirements</a>
-        <a href="#" class="footer__link">Site Map</a>
-        <a href="#" class="footer__link">FAQ</a>
+        <div
+          data-sly-resource="${'footermain' @ resourceType='ucs-exercise-liliane/components/footernav'}"
+        ></div>
       </div>
       <div class="footer__lastLink">
-        <a href="#" class="footer__link">General Company Info</a>
-        <a href="#" class="footer__link">Disclaimer</a>
-        <a href="#" class="footer__link">Privacy</a>
-        <a href="#" class="footer__link">SDIR and Storage</a>
-        <a href="#" class="footer__link">AML and Patriot ACT</a>
-        <a href="#" class="footer__link">Cookies</a>
-        <a href="#" class="footer__link">PSD2 - Open Banking</a>
-        <a href="#" class="footer__link">Alerts</a>
+        <div
+          data-sly-resource="${'footernav' @ resourceType='ucs-exercise-liliane/components/footernav'}"
+        ></div>
       </div>
     </div>
     <div class="footer__bottom">
       <div class="footer__col">
-        <img
+        <div
           class="footer__logo"
-          src="components/footer/svg/basics-logo-negative.svg"
-        />
-        <div class="footer__copy">
-          © 20XX – 20XX UniCredit S.p.A. - All Rights reserved
-        </div>
+          data-sly-resource="${'footer__logo' @ resourceType='ucs-exercise-liliane/components/logo'}"
+        ></div>
+        <div
+          class="footer__copy"
+          data-sly-resource="${'footer__copy' @ resourceType='ucs-exercise-liliane/components/footer__copy'}"
+        ></div>
       </div>
       <div class="footer__col">
-        <div class="footer__socials">
-          <a href="#">
-            <span class="icon-twitter"></span>
-          </a>
-          <a href="#">
-            <span class="icon-linkedin"></span>
-          </a>
-          <a href="#">
-            <span class="icon-youtube"></span>
-          </a>
-        </div>
+        <div
+          class="footer__socials"
+          data-sly-resource="${'footer__socials' @ resourceType='ucs-exercise-liliane/components/footer__socials'}"
+        ></div>
         <div class="footer__utils">
-          <a href="#">Lorem ipsum</a>
-          <a href="#">Lorem ipsum</a>
+          <div
+            data-sly-resource="${'footer__bottom' @ resourceType='ucs-exercise-liliane/components/footernav'}"
+          ></div>
         </div>
       </div>
     </div>
   </div>
 </footer>
-<!-- ******************* END FOOTER COMPONENT ******************* -->

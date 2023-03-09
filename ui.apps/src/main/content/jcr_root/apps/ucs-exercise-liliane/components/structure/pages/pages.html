@@ -14,17 +14,17 @@
     </head>
     <body>
       <sly
-        data-sly-resource="${'header' @resourceType='ucs-exercise-liliane/components/header'}"
+        data-sly-resource="${'/content/ucs-exercise-liliane/en/jcr:content/header' @resourceType='ucs-exercise-liliane/components/header'}"
       />
       <sly data-sly-include="/libs/wcm/core/components/init/init.jsp" />
       <sly
         data-sly-resource="${'parsys' @ resourceType='wcm/foundation/components/parsys'}"
       />
       <sly
-        data-sly-resource="${'footer' @resourceType='ucs-exercise-liliane/components/footer'}"
+        data-sly-resource="${'/content/ucs-exercise-liliane/en/jcr:content/footer' @resourceType='ucs-exercise-liliane/components/footer'}"
       />
       <sly
-        data-sly-call="${clientlib.js @ categories=['ucs-exercise-liliane.base']}"
+        data-sly-call="${clientlib.js @ categories=['ucs-exercise-liliane.official']}"
       />
     </body>
   </html>
