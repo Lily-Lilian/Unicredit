@@ -1,0 +1,16 @@
+<sly data-sly-use.cards="it.codeland.academy.Liliane.core.models.cardContainer">
+  <div class="cardsContainer">
+    <div
+      data-sly-test="${!cards.cardsNumber}"
+      style="color: gray; text-align: center"
+    >
+      [ Click to add cards ]
+    </div>
+    <div data-sly-repeat.item="${cards.cardsNumber}">
+      <h1>Test</h1>
+      <sly
+        data-sly-resource="${'card' @resourceType='/apps/ucs-exercise-liliane/components/atoms/card'}"
+      ></sly>
+    </div>
+  </div>
+</sly>

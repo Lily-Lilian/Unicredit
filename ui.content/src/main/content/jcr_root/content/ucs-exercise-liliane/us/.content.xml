@@ -3,8 +3,7 @@
     xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:redirectTarget="/content/ucs-exercise-liliane/us/en"
-        cq:template="/conf/ucs-exercise-liliane/settings/wcm/templates/page-content"
+        cq:template="/conf/ucs-exercise-liliane/settings/wcm/templates/academy-lily"
         jcr:primaryType="cq:PageContent"
         jcr:title="us"
         sling:resourceType="ucs-exercise-liliane/components/page" />

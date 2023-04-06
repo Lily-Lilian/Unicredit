@@ -1,0 +1,22 @@
+.color--primary {
+    color: #be1eb1;
+}
+
+.font--normal {
+    font-weight: bold;
+}
+
+.loading {
+    width: 40px;
+    height: 40px;
+    background: url(/apps/ucs-exercise-peretti/components/content/importjob/clientlib-base/gifs/loading.gif);
+    background-size: 100%;
+}
+
+.loading--show {
+    display: inline-block !important;
+}
+
+.loading--hide {
+    display: none !important;
+}

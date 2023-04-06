@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <sly
+      data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    />
+    <sly
+      data-sly-call="${clientlib.css @ categories=['ucs-exercise-liliane.official']}"
+    />
+
+    <sly data-sly-include="/libs/wcm/core/components/init/init.jsp" />
+
+    <sly
+      data-sly-resource="${'ref_header' @ resourceType='ucs-exercise-liliane/components/content/ref-header', wcmmode='disabled'}"
+    ></sly>
+    <sly data-sly-include="content.html"></sly>
+    <sly
+      data-sly-resource="${'ref_footer' @ resourceType='ucs-exercise-liliane/components/content/ref-footer', wcmmode='disabled'}"
+    />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <sly
+      data-sly-call="${clientlib.js @ categories=['ucs-exercise-liliane.official']}"
+    />
+  </body>
+</html>

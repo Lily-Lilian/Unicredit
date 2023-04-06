@@ -24,17 +24,26 @@ $(document).ready(function () {
   $(window).on("resize", function () {
     if ($(window).width() !== windowRelatedHash) {
       windowRelatedHash = $(window).width();
-      if ($(window).width() < 1025 && (!$(".result__cards .swiper-wrapper").hasClass("mobile"))) {
-        $(".result__cards .swiper-wrapper").addClass("mobile").removeClass("desktop");
+      if (
+        $(window).width() < 1025 &&
+        !$(".result__cards .swiper-wrapper").hasClass("mobile")
+      ) {
+        $(".result__cards .swiper-wrapper")
+          .addClass("mobile")
+          .removeClass("desktop");
         setSwiperStructure(articles);
-        cardsSwiper()
+        cardsSwiper();
       }
-      if ($(window).width() >= 1025 && (!$(".result__cards .swiper-wrapper").hasClass("desktop"))) {
-        $(".result__cards .swiper-wrapper").addClass("desktop").removeClass("mobile");
+      if (
+        $(window).width() >= 1025 &&
+        !$(".result__cards .swiper-wrapper").hasClass("desktop")
+      ) {
+        $(".result__cards .swiper-wrapper")
+          .addClass("desktop")
+          .removeClass("mobile");
         setSwiperStructure(articles);
-        cardsSwiper()
+        cardsSwiper();
       }
-
     }
   });
 
@@ -88,12 +97,12 @@ $(document).ready(function () {
       if ($(window).width() < 1025) {
         numberOfSlider = 1;
         $(".result__cards .swiper-wrapper")
-        .addClass("mobile")
-        .removeClass("desktop");
+          .addClass("mobile")
+          .removeClass("desktop");
       } else {
         $(".result__cards .swiper-wrapper")
-        .addClass("desktop")
-        .removeClass("mobile");
+          .addClass("desktop")
+          .removeClass("mobile");
         numberOfSlider = 4;
       }
       data.map(function (cardData) {
@@ -121,7 +130,9 @@ $(document).ready(function () {
 
           addBg($(window).width());
 
-          lastCard.find(".card__hashtag").text('#' + cardData.tags[0]);
+          lastCard.find(".card__hashtag").text("#" + cardData.tags[0]);
+          if (cardData.hardcoded)
+            lastCard.find(".card__hashtag").css("background", "gray");
 
           lastCard.find(".card__date").text(cardData.date);
 
@@ -145,12 +156,22 @@ $(document).ready(function () {
       addBg($(window).width());
     }
     $(".relatedHashtag__result .swiper-slide").remove();
+    const listJSON = document
+      .querySelector(".relatedHashtag__result .result__cards")
+      .getAttribute("data-articles-list");
+    const hardcodedArticles = listJSON.length ? JSON.parse(listJSON) : [];
+    console.log("================", listJSON, hardcodedArticles);
 
     $.ajax({
       url: `/bin/relatedtags?tag=${tag}&len=${length}`,
       type: "GET",
       success: function (res) {
-        articles = res;
+        articles = [
+          ...hardcodedArticles
+            .filter((x) => x.tags[0] === tag)
+            .map((x) => ({ ...x, hardcoded: true })),
+          ...res,
+        ];
       },
       complete: function () {
         setSwiperStructure(articles);

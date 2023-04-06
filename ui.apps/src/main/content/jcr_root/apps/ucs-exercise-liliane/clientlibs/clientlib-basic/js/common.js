@@ -33,34 +33,6 @@ $(window).on("resize", function () {
   addBg(w);
 });
 
-// REMOVE ALL TYPE OF PAGINATOR FROM SLIDER IF 1 SLIDER IS PRESENT
-function oneSliderFix(swiperDom, istance) {
-  var w = $(window).width();
-  istance.autoplay.stop();
-  var totalSlide = $(
-    ".heroBanner .swiper-slide:not(.swiper-slide-duplicate)"
-  ).length;
-
-  if (totalSlide == 1) {
-    if (w > 1025) {
-      swiperDom.find(".heroBanner__arrows").hide();
-      istance.params.noSwiping = false;
-    } else {
-      swiperDom.find("[data-pagination]").hide();
-      istance.params.simulateTouch = false;
-    }
-  } else {
-    istance.autoplay.start();
-    if (w > 1025) {
-      swiperDom.find(".heroBanner__arrows").show();
-      istance.params.noSwiping = true;
-    } else {
-      swiperDom.find("[data-pagination]").show();
-      istance.params.simulateTouch = true;
-    }
-  }
-}
-
 // Extra Hashtag logic
 function extraHash(container) {
   container.find(".hashTag").show();

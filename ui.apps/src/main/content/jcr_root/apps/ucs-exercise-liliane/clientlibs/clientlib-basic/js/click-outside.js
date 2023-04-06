@@ -34,18 +34,6 @@ var clickOutside = (function () {
         langBox.fadeOut();
         langSelector.find(".icon").removeClass("icon-up").addClass("icon-down");
       }
-
-      var GlobalSearchCategoryItem = $(".searchContainer .searchToolsSection__wrapper .filters__selector");
-      var GlobalSearchCategoryDropdown = $(".searchContainer .searchToolsSection__wrapper .selector__menu");
-
-      if (
-        !GlobalSearchCategoryItem.is(e.target) &&
-        GlobalSearchCategoryItem.has(e.target).length === 0 &&
-        GlobalSearchCategoryDropdown.is(":visible") &&
-        w > 1024
-      ) {
-        GlobalSearchCategoryDropdown.fadeOut();
-      }
     });
   };
 

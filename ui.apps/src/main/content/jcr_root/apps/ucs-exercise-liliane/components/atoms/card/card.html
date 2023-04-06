@@ -1,0 +1,48 @@
+<div class="cardContainer">
+  <div
+    data-sly-test="${!properties.backgroundType}"
+    style="color: gray; text-align: center"
+  >
+    [ Click to select card type ]
+  </div>
+
+  <div
+    data-sly-test="${properties.backgroundType =='image'}"
+    class="cardBackground"
+  >
+    <!--/* <img src="https://www.martinelliginettogroup.it/dam/mg/homepage/1.jpg.transform/1292x898/2163e82fd6a6bd269181b2635ca21cb1d1d69bc3/img.jpeg"
+            height="100%" width="100%" /> */-->
+    <sly
+      data-sly-resource="${'ImageCmp' @resourceType='/apps/ucs-exercise-liliane/components/atoms/imageCmp'}"
+    ></sly>
+  </div>
+  <div
+    data-sly-test="${properties.backgroundType =='video'}"
+    class="cardBackground"
+  >
+    <sly
+      data-sly-resource="${'backgroundVideo' @resourceType='/apps/ucs-exercise-liliane/components/videoCmp'}"
+    ></sly>
+  </div>
+  <div class="atoms">
+    <div>
+      <sly
+        data-sly-resource="${'title' @resourceType='/apps/ucs-exercise-liliane/components/atoms/title'}"
+      >
+      </sly>
+    </div>
+    <hr class="line" />
+    <div>
+      <sly
+        data-sly-resource="${'textCmp' @resourceType='/apps/ucs-exercise-liliane/components/atoms/textCmp'}"
+      >
+      </sly>
+    </div>
+    <div class="btnContainer">
+      <sly
+        data-sly-resource="${'button' @resourceType='/apps/ucs-exercise-liliane/components/atoms/buttonCmp'}"
+      >
+      </sly>
+    </div>
+  </div>
+</div>

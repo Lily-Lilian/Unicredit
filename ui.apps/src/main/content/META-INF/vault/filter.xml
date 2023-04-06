@@ -3,5 +3,7 @@
     <filter root="/apps/ucs-exercise-liliane/clientlibs" />
     <filter root="/apps/ucs-exercise-liliane/components" />
     <filter root="/apps/ucs-exercise-liliane/templates" />
+    <filter root="/apps/ucs-exercise-liliane/widgets" />
     <filter root="/apps/ucs-exercise-liliane/i18n" />
+    <!-- <filter root="/apps/ucs-exercise-liliane/oak-index" /> -->
 </workspaceFilter>
